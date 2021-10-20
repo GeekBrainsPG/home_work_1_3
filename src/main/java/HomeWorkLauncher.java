@@ -12,6 +12,14 @@ public class HomeWorkLauncher {
         System.out.println(Arrays.toString(result));
 
         //2 task
+        result = HomeWorkService.fillEmptyArray();
+
+        System.out.println(Arrays.toString(result));
+
+        //3 task
+        result = HomeWorkService.doMultiplication();
+
+        System.out.println(Arrays.toString(result));
     }
 
 }
