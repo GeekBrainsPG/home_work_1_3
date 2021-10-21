@@ -91,6 +91,52 @@ public class HomeWorkService {
         return isEqualPartsExist;
     }
 
+    public static int[] shiftElementInArray(int[] array, int n) {
+        if (n == 0) {
+            return array;
+        }
+
+        if (n > 0) {
+            return shiftRight(array, n);
+        }
+
+        return shiftLeft(array, n);
+    }
+
+    private static int[] shiftRight(int[] array, int n) {
+        int i = 0;
+
+        while (i < n) {
+            int firstElementToShift = array[0];
+
+            for (int j = 0; j < array.length - 1; j++) {
+                array[j] = array[j + 1];
+            }
+
+            array[array.length - 1] = firstElementToShift;
+            i++;
+        }
+
+        return array;
+    }
+
+    private static int[] shiftLeft(int[] array, int n) {
+        int i = 0;
+
+        while (i < Math.abs(n)) {
+            int lastElementToShift = array[array.length - 1];
+
+            for (int j = array.length - 1; j > 0; j--) {
+                array[j] = array[j - 1];
+            }
+
+            array[0] = lastElementToShift;
+            i++;
+        }
+
+        return array;
+    }
+
     private static int findSumOfIntInArray(int[] array) {
         return Arrays.stream(array).sum();
     }

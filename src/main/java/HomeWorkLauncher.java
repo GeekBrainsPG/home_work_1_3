@@ -33,6 +33,9 @@ public class HomeWorkLauncher {
 
         boolean isEqualPartsExist = HomeWorkService.checkBalance(new int[]{2, 2, 2, 1, 2, 2, 10, 1});
         System.out.println(isEqualPartsExist);
+
+        int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, -1);
+        System.out.println(Arrays.toString(shiftedArray));
     }
 
 }

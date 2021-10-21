@@ -106,4 +106,46 @@ public class HomeWorkServiceTest extends TestCase {
 
         assertFalse(isEqualPartsExist);
     }
+
+    public void testShiftElementInArrayWithRightShift() {
+        int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, 1);
+        int[] expectedArray = new int[] {2, 3, 1};
+
+        Assert.assertArrayEquals(shiftedArray, expectedArray);
+    }
+
+    public void testShiftElementInArrayWithRightShift1() {
+        int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, 4);
+        int[] expectedArray = new int[] {2, 3, 1};
+
+        Assert.assertArrayEquals(shiftedArray, expectedArray);
+    }
+
+    public void testShiftElementInArrayWithoutRightShift() {
+        int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, 3);
+        int[] expectedArray = new int[] {1, 2, 3};
+
+        Assert.assertArrayEquals(shiftedArray, expectedArray);
+    }
+
+    public void testShiftElementInArrayWithLeftShift() {
+        int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, -1);
+        int[] expectedArray = new int[] {3, 1, 2};
+
+        Assert.assertArrayEquals(shiftedArray, expectedArray);
+    }
+
+    public void testShiftElementInArrayWithLeftShift1() {
+        int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, -4);
+        int[] expectedArray = new int[] {3, 1, 2};
+
+        Assert.assertArrayEquals(shiftedArray, expectedArray);
+    }
+
+    public void testShiftElementInArrayWithoutLeftShift() {
+        int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, -3);
+        int[] expectedArray = new int[] {1, 2, 3};
+
+        Assert.assertArrayEquals(shiftedArray, expectedArray);
+    }
 }
