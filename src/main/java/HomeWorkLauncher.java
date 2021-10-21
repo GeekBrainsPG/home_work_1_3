@@ -23,6 +23,9 @@ public class HomeWorkLauncher {
 
         int[][] matrix = HomeWorkService.createQuadraticMatrix(0);
         System.out.println(Arrays.deepToString(matrix));
+
+        int[] array = HomeWorkService.createArrayAndFill(10, 7);
+        System.out.println(Arrays.toString(array));
     }
 
 }

@@ -1,5 +1,7 @@
 package service;
 
+import java.util.Arrays;
+
 public class HomeWorkService {
 
     private HomeWorkService() {}
@@ -44,6 +46,14 @@ public class HomeWorkService {
         fillDiagonal(matrix);
 
         return matrix;
+    }
+
+    public static int[] createArrayAndFill(int len, int initialValue) {
+        int[] array = new int[len];
+
+        Arrays.fill(array, initialValue);
+
+        return array;
     }
 
     private static void fillDiagonal(int[][] matrix) {

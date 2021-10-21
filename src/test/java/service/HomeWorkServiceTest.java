@@ -65,4 +65,12 @@ public class HomeWorkServiceTest extends TestCase {
 
         Assert.assertArrayEquals(matrix, expectedMatrix);
     }
+
+
+    public void testCreateArrayAndFill() {
+        int[] array = HomeWorkService.createArrayAndFill(10, 7);
+        int[] expectedArray = new int[] {7, 7, 7, 7, 7, 7, 7, 7, 7, 7};
+
+        Assert.assertArrayEquals(array, expectedArray);
+    }
 }
