@@ -22,18 +22,23 @@ public class HomeWorkLauncher {
 
         System.out.println(Arrays.toString(result));
 
+        //4 task
         int[][] matrix = HomeWorkService.createQuadraticMatrix(0);
         System.out.println(Arrays.deepToString(matrix));
 
+        //5 task
         int[] array = HomeWorkService.createArrayAndFill(10, 7);
         System.out.println(Arrays.toString(array));
 
+        //6 task
         MinMaxValue minMaxValue = HomeWorkService.findMinMaxValueInArray(new int[] {1, -5, 60, 4, -7, 100});
         System.out.println(minMaxValue);
 
+        //7 task
         boolean isEqualPartsExist = HomeWorkService.checkBalance(new int[]{2, 2, 2, 1, 2, 2, 10, 1});
         System.out.println(isEqualPartsExist);
 
+        //8 task
         int[] shiftedArray = HomeWorkService.shiftElementInArray(new int[] {1, 2, 3 }, -1);
         System.out.println(Arrays.toString(shiftedArray));
     }
