@@ -1,5 +1,7 @@
 package service;
 
+import model.MinMaxValue;
+
 import java.util.Arrays;
 
 public class HomeWorkService {
@@ -54,6 +56,43 @@ public class HomeWorkService {
         Arrays.fill(array, initialValue);
 
         return array;
+    }
+
+    public static MinMaxValue findMinMaxValueInArray(int[] array) {
+        MinMaxValue minMaxValue = new MinMaxValue();
+
+        for (int j : array) {
+            if (minMaxValue.getMax() < j) {
+                minMaxValue.setMax(j);
+            }
+
+            if (minMaxValue.getMin() > j) {
+                minMaxValue.setMin(j);
+            }
+        }
+
+        return minMaxValue;
+    }
+
+    public static boolean checkBalance(int[] array) {
+        boolean isEqualPartsExist = false;
+
+        for (int divider = 1; divider < array.length - 1; divider++) {
+            int[] leftPart = Arrays.copyOfRange(array, 0, divider);
+            int[] rightPart = Arrays.copyOfRange(array, divider, array.length);
+            int leftPartSum = findSumOfIntInArray(leftPart);
+            int rightPartSum = findSumOfIntInArray(rightPart);
+
+            if (leftPartSum == rightPartSum) {
+                isEqualPartsExist = true;
+            }
+        }
+
+        return isEqualPartsExist;
+    }
+
+    private static int findSumOfIntInArray(int[] array) {
+        return Arrays.stream(array).sum();
     }
 
     private static void fillDiagonal(int[][] matrix) {

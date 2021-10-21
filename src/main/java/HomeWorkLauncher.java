@@ -1,3 +1,4 @@
+import model.MinMaxValue;
 import service.HomeWorkService;
 
 import java.util.Arrays;
@@ -26,6 +27,12 @@ public class HomeWorkLauncher {
 
         int[] array = HomeWorkService.createArrayAndFill(10, 7);
         System.out.println(Arrays.toString(array));
+
+        MinMaxValue minMaxValue = HomeWorkService.findMinMaxValueInArray(new int[] {1, -5, 60, 4, -7, 100});
+        System.out.println(minMaxValue);
+
+        boolean isEqualPartsExist = HomeWorkService.checkBalance(new int[]{2, 2, 2, 1, 2, 2, 10, 1});
+        System.out.println(isEqualPartsExist);
     }
 
 }

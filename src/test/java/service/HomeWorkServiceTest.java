@@ -1,6 +1,7 @@
 package service;
 
 import junit.framework.TestCase;
+import model.MinMaxValue;
 import org.junit.Assert;
 
 public class HomeWorkServiceTest extends TestCase {
@@ -72,5 +73,37 @@ public class HomeWorkServiceTest extends TestCase {
         int[] expectedArray = new int[] {7, 7, 7, 7, 7, 7, 7, 7, 7, 7};
 
         Assert.assertArrayEquals(array, expectedArray);
+    }
+
+    public void testFindMinMaxValueInArray() {
+        MinMaxValue values = HomeWorkService.findMinMaxValueInArray(new int[] {1, -5, 60, 4, -7, 100});
+        MinMaxValue expectedResult = new MinMaxValue(-7, 100);
+
+        assertEquals(values, expectedResult);
+    }
+
+    public void testFindMinMaxValueInArrayWithSingleInt() {
+        MinMaxValue values = HomeWorkService.findMinMaxValueInArray(new int[] {-1});
+        MinMaxValue expectedResult = new MinMaxValue(-1, -1);
+
+        assertEquals(values, expectedResult);
+    }
+
+    public void testCheckBalanceShouldBeTrue1() {
+        boolean isEqualPartsExist = HomeWorkService.checkBalance(new int[]{2, 2, 2, 1, 2, 2, 10, 1});
+
+        assertTrue(isEqualPartsExist);
+    }
+
+    public void testCheckBalanceShouldBeTrue2() {
+        boolean isEqualPartsExist = HomeWorkService.checkBalance(new int[]{1, 1, 1, 2, 1});
+
+        assertTrue(isEqualPartsExist);
+    }
+
+    public void testCheckBalanceShouldBeFalse() {
+        boolean isEqualPartsExist = HomeWorkService.checkBalance(new int[]{1, 1, 1});
+
+        assertFalse(isEqualPartsExist);
     }
 }
