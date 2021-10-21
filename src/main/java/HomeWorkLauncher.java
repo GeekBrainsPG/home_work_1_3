@@ -20,6 +20,9 @@ public class HomeWorkLauncher {
         result = HomeWorkService.doMultiplication();
 
         System.out.println(Arrays.toString(result));
+
+        int[][] matrix = HomeWorkService.createQuadraticMatrix(0);
+        System.out.println(Arrays.deepToString(matrix));
     }
 
 }

@@ -26,4 +26,43 @@ public class HomeWorkServiceTest extends TestCase {
 
         Assert.assertArrayEquals(outputFilledArray, expectedResult);
     }
+
+    public void testCreateQuadraticMatrixWithOddSize() {
+        int[][] matrix = HomeWorkService.createQuadraticMatrix(5);
+        int[][] expectedMatrix = new int[][] {
+                {1, 0, 0, 0, 1},
+                {0, 1, 0, 1, 0},
+                {0, 0, 1, 0, 0},
+                {0, 1, 0, 1, 0},
+                {1, 0, 0, 0, 1}
+        };
+
+        Assert.assertArrayEquals(matrix, expectedMatrix);
+    }
+
+    public void testCreateQuadraticMatrixWithEvenSize() {
+        int[][] matrix = HomeWorkService.createQuadraticMatrix(4);
+        int[][] expectedMatrix = new int[][] {
+                {1, 0, 0, 1},
+                {0, 1, 1, 0},
+                {0, 1, 1, 0},
+                {1, 0, 0, 1},
+        };
+
+        Assert.assertArrayEquals(matrix, expectedMatrix);
+    }
+
+    public void testCreateQuadraticMatrix1X1() {
+        int[][] matrix = HomeWorkService.createQuadraticMatrix(1);
+        int[][] expectedMatrix = new int[][] {{1}};
+
+        Assert.assertArrayEquals(matrix, expectedMatrix);
+    }
+
+    public void testCreateQuadraticMatrix0Size() {
+        int[][] matrix = HomeWorkService.createQuadraticMatrix(0);
+        int[][] expectedMatrix = new int[][] {};
+
+        Assert.assertArrayEquals(matrix, expectedMatrix);
+    }
 }

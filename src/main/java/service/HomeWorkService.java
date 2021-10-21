@@ -38,4 +38,24 @@ public class HomeWorkService {
         return array;
     }
 
+    public static int[][] createQuadraticMatrix(int matrixSize) {
+        int[][] matrix = new int[matrixSize][matrixSize];
+
+        fillDiagonal(matrix);
+
+        return matrix;
+    }
+
+    private static void fillDiagonal(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i; j < matrix[i].length; j++) {
+                int rightIndex = (matrix[i].length - 1) - j;
+                matrix[i][j] = 1;
+                matrix[i][rightIndex] = 1;
+
+                break;
+            }
+        }
+    }
+
 }
